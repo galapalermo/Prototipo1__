@@ -2,23 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class InteractionArea : MonoBehaviour
 {
-    public int score= 0;
-    public UIManager uiManagerScript;
+    public int score = 0;
+
+
+    public UIManager UIManagerScript;
+
+
     void Awake()
     {
-        uiManagerScript = GameObject.FindObjectOfType<UIManager>();
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Collectible")){
-            Destroy(other.gameObject);
-            score ++; 
-            uiManagerScript.UpdateScore(score);
-        }
-            
-        
+        UIManagerScript = GameObject.FindObjectOfType<UIManager>();
     }
 
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Collectible"))
+        {
+            Destroy(other.gameObject);
+
+
+            score++;
+
+
+            UIManagerScript.UpdateScore(score);
+        }
+    }
 }
+
