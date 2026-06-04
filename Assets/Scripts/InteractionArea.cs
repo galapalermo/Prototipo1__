@@ -1,34 +1,33 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class InteractionArea : MonoBehaviour
 {
-    public int score = 0;
-
-
-    public UIManager UIManagerScript;
+    public int scoreMax = 5;
+    private int currentScore = 0;
+    private UIManager uiManager;
 
 
     void Awake()
     {
-        UIManagerScript = GameObject.FindObjectOfType<UIManager>();
+        uiManager = FindObjectOfType<UIManager>();
     }
 
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Collectible"))
+        if (other.gameObject.CompareTag("Collectible"))
         {
             Destroy(other.gameObject);
+            currentScore++;
+            uiManager.UpdateScore(currentScore);
 
 
-            score++;
-
-
-            UIManagerScript.UpdateScore(score);
+            if (currentScore >= scoreMax)
+                GameManager.Instance.TriggerWin();
         }
     }
 }
-

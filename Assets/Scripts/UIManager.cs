@@ -8,14 +8,42 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI txtScore;
     public TextMeshProUGUI txtTimer;
+
+
     // Start is called before the first frame update
     void Start()
     {
         UpdateScore(0);
+        UpdateTimer(0f);
     }
-public void UpdateScore(int score)
+
+
+    public void UpdateScore(int score){
+       
+        txtScore.text = score.ToString();
+
+
+    }
+     public void UpdateTimer(float time)
+    {
+       
+        txtTimer.text = "Time: " + Mathf.CeilToInt(time).ToString();
+    }
+
+
+    [Header("Pantallas de fin de juego")]
+public GameObject panelWin;
+public GameObject panelGameOver;
+
+
+public void MostrarPantallaWin()
 {
-   txtScore.text = "Score: " + score.ToString();
+    panelWin.SetActive(true);
 }
- 
+
+
+public void MostrarPantallaGameOver()
+{
+    panelGameOver.SetActive(true);
+}
 }
