@@ -8,7 +8,7 @@ public class InteractionArea : MonoBehaviour
 {
     public int scoreMax = 5;
     private int currentScore = 0;
-    private UIManager uiManager;
+    public UIManager uiManager;
 
 
     void Awake()
@@ -24,6 +24,7 @@ public class InteractionArea : MonoBehaviour
             Destroy(other.gameObject);
             currentScore++;
             uiManager.UpdateScore(currentScore);
+            Debug.Log("Score");
 
 
             if (currentScore >= scoreMax)
