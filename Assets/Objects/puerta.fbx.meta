@@ -1,16 +1,18 @@
 fileFormatVersion: 2
-guid: a79b10a2b83d7c04db05941d0cceed21
+guid: e1789e81ab0f3384786a69ffbdc60c22
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Tapa
-    2100002: "Ca\xF1o"
-    2100004: Alambre
+    2100000: Marco_Metal
+    2100002: Puerta_Gris
+    2100004: Marco_Madera
+    2100006: Vidrio
+    2100008: Manija_Dorada
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Tapa
+    4300000: Puerta_Aula_L201
   externalObjects: {}
   materials:
     importMaterials: 1
